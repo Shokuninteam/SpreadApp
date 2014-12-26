@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SpreadApp
 //
-//  Created by Mohamed Mokhtari on 24/12/2014.
+//  Created by Mohamed Mokhtari on 26/12/2014.
 //  Copyright (c) 2014 Shokunin. All rights reserved.
 //
 

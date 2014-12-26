@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D93AD7C41A4B5C1400F8032D"
+               BlueprintIdentifier = "D9B2352E1A4DCCF6001A2473"
                BuildableName = "SpreadApp.app"
                BlueprintName = "SpreadApp"
                ReferencedContainer = "container:SpreadApp.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D93AD7DB1A4B5C1500F8032D"
+               BlueprintIdentifier = "D9B235431A4DCCF7001A2473"
                BuildableName = "SpreadAppTests.xctest"
                BlueprintName = "SpreadAppTests"
                ReferencedContainer = "container:SpreadApp.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D93AD7DB1A4B5C1500F8032D"
+               BlueprintIdentifier = "D9B235431A4DCCF7001A2473"
                BuildableName = "SpreadAppTests.xctest"
                BlueprintName = "SpreadAppTests"
                ReferencedContainer = "container:SpreadApp.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93AD7C41A4B5C1400F8032D"
+            BlueprintIdentifier = "D9B2352E1A4DCCF6001A2473"
             BuildableName = "SpreadApp.app"
             BlueprintName = "SpreadApp"
             ReferencedContainer = "container:SpreadApp.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93AD7C41A4B5C1400F8032D"
+            BlueprintIdentifier = "D9B2352E1A4DCCF6001A2473"
             BuildableName = "SpreadApp.app"
             BlueprintName = "SpreadApp"
             ReferencedContainer = "container:SpreadApp.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93AD7C41A4B5C1400F8032D"
+            BlueprintIdentifier = "D9B2352E1A4DCCF6001A2473"
             BuildableName = "SpreadApp.app"
             BlueprintName = "SpreadApp"
             ReferencedContainer = "container:SpreadApp.xcodeproj">
