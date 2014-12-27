@@ -9,25 +9,64 @@
 import UIKit
 
 class UrlsProvider: NSObject {
-    let baseUrl = "http://localhost:8080/"
-    
-    func getUserById (id : String) -> String {
-        return baseUrl + "users/" + id
+    class func getBaseUrl () -> String {
+        return "http://localhost:8080/"
     }
     
-    func createUser () -> String {
-        return baseUrl + "users"
+    class func getUserById (id : String) -> NSURL {
+        return NSURL(string: getBaseUrl() + "users/" + id)!
+
     }
     
-    func modifyUser (id : String) -> String {
-        return baseUrl + "users/" + id
+    class func createUser () -> NSURL {
+        return NSURL(string : getBaseUrl() + "users")!
     }
     
-    func deleteUser (id : String) -> String {
-        return baseUrl + "users/" + id
+    class func modifyUser (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id)!
     }
     
-    func addPosition (id : String) -> String {
-        return baseUrl + "users/" + id + "/positions"
+    class func deleteUser (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id)!
+    }
+    
+    class func addPosition (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id + "/positions")!
+    }
+    
+    class func getFavs (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id + "/notes/favoris")!
+    }
+    
+    class func addFav (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id + "/notes/favoris")!
+    }
+    
+    class func getHistory (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id + "/notes/history")!
+    }
+    
+    class func spreadNote (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id + "/notes/spreaded")!
+    }
+    
+    class func discardNote (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id + "/notes/discard")!
+    }
+    
+    class func getSpreaded (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id + "/notes/spreaded")!
+    }
+    
+    class func getUnanswered (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "users/" + id + "/notes/unanswered")!
+    }
+    
+    class func getNote (id : String) -> NSURL {
+        return NSURL(string : getBaseUrl() + "notes/" + id)!
+    }
+    
+    class func createNote () -> NSURL {
+        return NSURL(string : getBaseUrl() + "notes")!
     }
 }
