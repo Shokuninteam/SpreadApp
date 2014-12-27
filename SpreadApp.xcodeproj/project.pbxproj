@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443DCF161A4E234200B0EF39 /* RequestsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF151A4E234100B0EF39 /* RequestsServices.swift */; };
+		443DCF191A4E308900B0EF39 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF181A4E308900B0EF39 /* StartPageViewController.swift */; };
 		D9B235351A4DCCF6001A2473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B235341A4DCCF6001A2473 /* AppDelegate.swift */; };
 		D9B2353A1A4DCCF6001A2473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B235381A4DCCF6001A2473 /* Main.storyboard */; };
 		D9B2353C1A4DCCF6001A2473 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B2353B1A4DCCF6001A2473 /* Images.xcassets */; };
 		D9B2353F1A4DCCF6001A2473 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B2353D1A4DCCF6001A2473 /* LaunchScreen.xib */; };
 		D9B2354B1A4DCCF7001A2473 /* SpreadAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2354A1A4DCCF7001A2473 /* SpreadAppTests.swift */; };
-		D9B235551A4DD0EA001A2473 /* 14.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B235541A4DD0EA001A2473 /* 14.png */; };
-		D9B235571A4DDBB7001A2473 /* fond.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D9B235561A4DDBB7001A2473 /* fond.JPG */; };
 		D9B235591A4DE48C001A2473 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B235581A4DE48C001A2473 /* LoginController.swift */; };
 		D9B2355C1A4DE517001A2473 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2355B1A4DE517001A2473 /* SettingController.swift */; };
 		D9B2355E1A4DE541001A2473 /* ProfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2355D1A4DE541001A2473 /* ProfilController.swift */; };
@@ -33,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		443DCF151A4E234100B0EF39 /* RequestsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsServices.swift; sourceTree = "<group>"; };
+		443DCF181A4E308900B0EF39 /* StartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		D9B2352F1A4DCCF6001A2473 /* SpreadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpreadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B235331A4DCCF6001A2473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9B235341A4DCCF6001A2473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		443DCF171A4E234E00B0EF39 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				443DCF151A4E234100B0EF39 /* RequestsServices.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		D9B235261A4DCCF6001A2473 = {
 			isa = PBXGroup;
 			children = (
@@ -91,8 +101,8 @@
 		D9B235311A4DCCF6001A2473 /* SpreadApp */ = {
 			isa = PBXGroup;
 			children = (
-				D9B2355A1A4DE4EF001A2473 /* Controller */,
-				D9B235341A4DCCF6001A2473 /* AppDelegate.swift */,
+				D9B2355A1A4DE4EF001A2473 /* Controllers */,
+				443DCF171A4E234E00B0EF39 /* Services */,
 				D9B235381A4DCCF6001A2473 /* Main.storyboard */,
 				D9B2353B1A4DCCF6001A2473 /* Images.xcassets */,
 				D9B2353D1A4DCCF6001A2473 /* LaunchScreen.xib */,
@@ -104,6 +114,7 @@
 		D9B235321A4DCCF6001A2473 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9B235341A4DCCF6001A2473 /* AppDelegate.swift */,
 				D9B235561A4DDBB7001A2473 /* fond.JPG */,
 				D9B235541A4DD0EA001A2473 /* 14.png */,
 				D9B235331A4DCCF6001A2473 /* Info.plist */,
@@ -128,9 +139,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D9B2355A1A4DE4EF001A2473 /* Controller */ = {
+		D9B2355A1A4DE4EF001A2473 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				443DCF181A4E308900B0EF39 /* StartPageViewController.swift */,
 				D9B235581A4DE48C001A2473 /* LoginController.swift */,
 				D9B2355B1A4DE517001A2473 /* SettingController.swift */,
 				D9B2355D1A4DE541001A2473 /* ProfilController.swift */,
@@ -138,7 +150,7 @@
 				D9B235611A4DE576001A2473 /* CreateNoteController.swift */,
 				D9B235631A4DE64D001A2473 /* NewsFeedController.swift */,
 			);
-			name = Controller;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,8 +235,6 @@
 			files = (
 				D9B2353A1A4DCCF6001A2473 /* Main.storyboard in Resources */,
 				D9B2353F1A4DCCF6001A2473 /* LaunchScreen.xib in Resources */,
-				D9B235551A4DD0EA001A2473 /* 14.png in Resources */,
-				D9B235571A4DDBB7001A2473 /* fond.JPG in Resources */,
 				D9B2353C1A4DCCF6001A2473 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,8 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B235641A4DE64D001A2473 /* NewsFeedController.swift in Sources */,
+				443DCF161A4E234200B0EF39 /* RequestsServices.swift in Sources */,
 				D9B2355E1A4DE541001A2473 /* ProfilController.swift in Sources */,
 				D9B235601A4DE54F001A2473 /* NotesController.swift in Sources */,
+				443DCF191A4E308900B0EF39 /* StartPageViewController.swift in Sources */,
 				D9B2355C1A4DE517001A2473 /* SettingController.swift in Sources */,
 				D9B235591A4DE48C001A2473 /* LoginController.swift in Sources */,
 				D9B235351A4DCCF6001A2473 /* AppDelegate.swift in Sources */,
@@ -441,6 +453,7 @@
 				D9B235501A4DCCF7001A2473 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9B235511A4DCCF7001A2473 /* Build configuration list for PBXNativeTarget "SpreadAppTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +462,7 @@
 				D9B235531A4DCCF7001A2473 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
