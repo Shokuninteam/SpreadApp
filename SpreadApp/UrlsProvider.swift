@@ -1,5 +1,5 @@
 //
-//  RequestsServices.swift
+//  UrlsProvider.swift
 //  SpreadApp
 //
 //  Created by Frank Bassard on 27/12/2014.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RequestsServices: NSObject {
-    
+class UrlsProvider: NSObject {
+    let baseUrl = "http://localhost:8080/"
     
 }

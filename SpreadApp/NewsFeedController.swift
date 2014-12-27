@@ -12,7 +12,7 @@ class NewsFeedController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

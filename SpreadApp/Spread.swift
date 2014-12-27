@@ -1,5 +1,5 @@
 //
-//  RequestsServices.swift
+//  Spread.swift
 //  SpreadApp
 //
 //  Created by Frank Bassard on 27/12/2014.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class RequestsServices: NSObject {
-    
-    
+class Spread: NSObject {
+    var user : String?
+    var date : NSDate?
+    var loc : Loc?
+    var answer : String?
 }

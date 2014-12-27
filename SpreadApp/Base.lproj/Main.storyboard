@@ -57,6 +57,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="vtJ-hI-m5B" kind="push" identifier="RegisterSegue" id="VAp-V8-YWI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,7 +83,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1j-Zh-cEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-356" y="-6"/>
+            <point key="canvasLocation" x="141" y="-704"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="qRD-sd-zo9">
+            <objects>
+                <viewController id="vtJ-hI-m5B" customClass="RegisterController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sjy-7k-wNP"/>
+                        <viewControllerLayoutGuide type="bottom" id="L8y-gh-RTX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zvF-2Y-yeb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mix-Fs-Tto">
+                                <rect key="frame" x="16" y="72" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-2v-MIH">
+                                <rect key="frame" x="16" y="110" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-yd-NNd">
+                                <rect key="frame" x="16" y="148" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TY-b0-gME">
+                                <rect key="frame" x="16" y="186" width="57" height="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yau-pj-FcF" kind="push" identifier="SignUpSegue" id="6hI-rr-FDG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register" id="VQK-cM-vmM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhS-md-wWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="12"/>
         </scene>
         <!--Log in-->
         <scene sceneID="ufC-wZ-h7g">
@@ -111,18 +159,12 @@
                                 </state>
                                 <connections>
                                     <action selector="SignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GDc-bh-EIm"/>
+                                    <segue destination="yau-pj-FcF" kind="push" identifier="SignInSegue" id="pBw-3c-Yha"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-a8-4Vf">
-                                <rect key="frame" x="245" y="148" width="57" height="30"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="lgJ-a8-4Vf" secondAttribute="trailing" constant="2" id="44M-GE-ohj"/>
                             <constraint firstItem="fgv-19-faV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="3" id="sbD-5z-L6H"/>
                         </constraints>
                     </view>
@@ -130,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="-6"/>
+            <point key="canvasLocation" x="363" y="12"/>
         </scene>
         <!--Profil Controller-->
         <scene sceneID="Gg3-pN-JUg">
@@ -239,7 +281,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tke-89-nWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-888" y="-6"/>
+            <point key="canvasLocation" x="-280" y="-704"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -247,4 +289,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="6hI-rr-FDG"/>
+    </inferredMetricsTieBreakers>
 </document>

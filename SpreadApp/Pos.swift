@@ -1,5 +1,5 @@
 //
-//  RequestsServices.swift
+//  Pos.swift
 //  SpreadApp
 //
 //  Created by Frank Bassard on 27/12/2014.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class RequestsServices: NSObject {
+class Pos: NSObject {
     
+    var date : NSDate?
+    var loc : Loc?
     
 }
