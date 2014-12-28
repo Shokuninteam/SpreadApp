@@ -10,6 +10,9 @@ import UIKit
 
 class LoginController: UIViewController {
     
+    @IBOutlet var userName: UITextField!
+    @IBOutlet var pwd: UITextField!
+    
     @IBAction func SignIn(sender: UIButton) {
         
     }
@@ -24,9 +27,11 @@ class LoginController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signIn(sender: UIButton) {
+        RequestsServices.loginNickname(userName.text, pwd: pwd.text)
+    }
     
 }
 

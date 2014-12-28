@@ -155,6 +155,7 @@
                                 </state>
                                 <connections>
                                     <action selector="SignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GDc-bh-EIm"/>
+                                    <action selector="signIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LPo-Wg-cwf"/>
                                     <segue destination="yau-pj-FcF" kind="push" identifier="SignInSegue" id="pBw-3c-Yha"/>
                                 </connections>
                             </button>
@@ -165,6 +166,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log in" id="QGz-ZC-jIR"/>
+                    <connections>
+                        <outlet property="pwd" destination="KkU-f8-SeJ" id="NEV-Jl-Id1"/>
+                        <outlet property="userName" destination="OI4-5Q-Zy9" id="41B-Wp-CVy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,6 +294,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6hI-rr-FDG"/>
+        <segue reference="pBw-3c-Yha"/>
     </inferredMetricsTieBreakers>
 </document>

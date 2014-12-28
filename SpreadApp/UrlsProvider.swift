@@ -15,7 +15,10 @@ class UrlsProvider: NSObject {
     
     class func getUserById (id : String) -> NSURL {
         return NSURL(string: getBaseUrl() + "users/" + id)!
-
+    }
+    
+    class func logIn () -> NSURL {
+        return NSURL(string: getBaseUrl() + "users")!
     }
     
     class func createUser () -> NSURL {
