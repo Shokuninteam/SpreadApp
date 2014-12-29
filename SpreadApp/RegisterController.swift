@@ -1,11 +1,3 @@
-//
-//  RegisterController.swift
-//  SpreadApp
-//
-//  Created by Frank Bassard on 27/12/2014.
-//  Copyright (c) 2014 Shokunin. All rights reserved.
-//
-
 import UIKit
 
 class RegisterController: UIViewController {
@@ -24,16 +16,5 @@ class RegisterController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

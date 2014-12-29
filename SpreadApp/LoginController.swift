@@ -1,14 +1,9 @@
-//
-//  LoginController.swift
-//  SpreadApp
-//
-//  Created by Mohamed Mokhtari on 26/12/2014.
-//  Copyright (c) 2014 Shokunin. All rights reserved.
-//
-
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, LoginRequestDelegate {
+    
+    var userId : String?
+    var requestServices = RequestsServices()
     
     @IBOutlet var userName: UITextField!
     @IBOutlet var pwd: UITextField!
@@ -19,6 +14,7 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestServices.loginControllerDelegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -30,7 +26,12 @@ class LoginController: UIViewController {
     }
     
     @IBAction func signIn(sender: UIButton) {
-        RequestsServices.loginNickname(userName.text, pwd: pwd.text)
+        requestServices.loginNickname(userName.text, pwd: pwd.text)
+    }
+    
+    func loginRequestHandler(code : Int, id : String) {
+        println(code)
+        println(id)
     }
     
 }

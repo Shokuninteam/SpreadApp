@@ -1,34 +1,17 @@
-//
-//  RequestsServices.swift
-//  SpreadApp
-//
-//  Created by Frank Bassard on 27/12/2014.
-//  Copyright (c) 2014 Shokunin. All rights reserved.
-//
-
 import UIKit
 
 class RequestsServices: NSObject {
     
-    class func loginMail (mail : String, pwd :String) {
-        
-        let url = UrlsProvider.logIn()
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
-        }
-        
-        task.resume()
-    }
+    var loginControllerDelegate : LoginController?
     
-    class func loginNickname (nickname : String, pwd :String) {
+    func loginNickname (nickname : String, pwd :String) {
         
         var request = NSMutableURLRequest(URL : UrlsProvider.logIn())
         var session = NSURLSession.sharedSession()
         
         request.HTTPMethod = "PUT"
         
-        var params = ["email":"\(nickname)", "password":"\(pwd)"] as Dictionary
+        var params = ["nickname":"\(nickname)", "pwd":"\(pwd)"] as Dictionary
         
         var err: NSError?
         
@@ -38,25 +21,25 @@ class RequestsServices: NSObject {
         
         var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             
-            println("Response: \(response)")
+            var code = 404
+            var id = ""
             
-            var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-            
-            println("Body: \(strData)\n\n")
-            
-            var err: NSError?
-            
-            var json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as NSDictionary
-            
-            if(err != nil) {
-                println(err!.localizedDescription)
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+                if let userId = httpResponse.allHeaderFields["id"] as? NSString {
+                    id = userId
+                }
             }
-                
-            else {
-                dispatch_async(dispatch_get_main_queue(), {
-                    println("setMainQueue");
-                })
-            }
+            
+            //var err: NSError?
+            //var json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as NSDictionary
+            //if(err != nil) {
+            //    println(err!.localizedDescription)
+            //}
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.loginControllerDelegate!.loginRequestHandler(code, id : id)
+            })
         })
         task.resume()
     }
