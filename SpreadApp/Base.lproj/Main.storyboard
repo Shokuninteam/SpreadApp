@@ -76,6 +76,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gIU-am-OCV"/>
+                    <connections>
+                        <segue destination="yau-pj-FcF" kind="push" identifier="DirectLoginSegue" id="mfD-iP-1T5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1j-Zh-cEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhS-md-wWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="12"/>
+            <point key="canvasLocation" x="-466" y="12"/>
         </scene>
         <!--Log in-->
         <scene sceneID="ufC-wZ-h7g">
@@ -139,41 +142,43 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OI4-5Q-Zy9">
-                                <rect key="frame" x="16" y="72" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KkU-f8-SeJ">
-                                <rect key="frame" x="16" y="110" width="288" height="30"/>
+                                <rect key="frame" x="63" y="180" width="194" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgv-19-faV">
-                                <rect key="frame" x="19" y="148" width="47" height="30"/>
+                                <rect key="frame" x="137" y="256" width="47" height="30"/>
                                 <state key="normal" title="Sign in">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="SignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GDc-bh-EIm"/>
-                                    <action selector="signIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LPo-Wg-cwf"/>
-                                    <segue destination="yau-pj-FcF" kind="push" identifier="SignInSegue" id="pBw-3c-Yha"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spread" translatesAutoresizingMaskIntoConstraints="NO" id="Tmi-Ul-xfm">
+                                <rect key="frame" x="110" y="72" width="100" height="100"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KkU-f8-SeJ">
+                                <rect key="frame" x="63" y="218" width="194" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="fgv-19-faV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="3" id="sbD-5z-L6H"/>
+                            <constraint firstItem="fgv-19-faV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="121" id="sbD-5z-L6H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log in" id="QGz-ZC-jIR"/>
                     <connections>
                         <outlet property="pwd" destination="KkU-f8-SeJ" id="NEV-Jl-Id1"/>
                         <outlet property="userName" destination="OI4-5Q-Zy9" id="41B-Wp-CVy"/>
+                        <segue destination="yau-pj-FcF" kind="push" identifier="SignInSegue" id="qTC-yC-yPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="12"/>
+            <point key="canvasLocation" x="-91" y="12"/>
         </scene>
         <!--Profil Controller-->
         <scene sceneID="Gg3-pN-JUg">
@@ -294,6 +299,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pBw-3c-Yha"/>
+        <segue reference="qTC-yC-yPH"/>
     </inferredMetricsTieBreakers>
 </document>
