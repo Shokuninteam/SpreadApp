@@ -13,26 +13,19 @@ class LoginController: UIViewController, LoginRequestDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         requestServices.loginControllerDelegate = self
-        addBorders()
+        addBorders(userName)
+        addBorders(pwd)
     }
     
-    func addBorders (){
+    func addBorders (view : UIView){
         var border = CALayer()
         var width = CGFloat(1.0)
         border.borderColor = UIColor.lightGrayColor().CGColor
-        border.frame = CGRect(x: 0, y: userName.frame.size.height - width, width:  userName.frame.size.width, height: userName.frame.size.height)
+        border.frame = CGRect(x: 0, y: view.frame.size.height - width, width:  view.frame.size.width, height: view.frame.size.height)
         
         border.borderWidth = width
-        userName.layer.addSublayer(border)
-        userName.layer.masksToBounds = true
-        
-        var border2 = CALayer()
-        border2.borderColor = UIColor.lightGrayColor().CGColor
-        border2.frame = CGRect(x: 0, y: pwd.frame.size.height - width, width:  pwd.frame.size.width, height: pwd.frame.size.height)
-        
-        border2.borderWidth = width
-        pwd.layer.addSublayer(border2)
-        pwd.layer.masksToBounds = true
+        view.layer.addSublayer(border)
+        view.layer.masksToBounds = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -97,9 +90,9 @@ class LoginController: UIViewController, LoginRequestDelegate {
     func loginRequestHandler(code : Int, id : String) {
         self.overlayView?.hidden = true
         if code == 200 {
-            performSegueWithIdentifier("SignInSegue", sender: self)
             NSUserDefaults.standardUserDefaults().setObject(id, forKey: "userId")
             NSUserDefaults.standardUserDefaults().synchronize()
+            performSegueWithIdentifier("SignInSegue", sender: self)
         } else {
             var msg = "No awnser from the server"
             if code == 404 || code == 400{
