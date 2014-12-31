@@ -8,10 +8,11 @@
 
 import UIKit
 
-class NewsFeedController: UIViewController {
+class NewsFeedController: UIPageTargetViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.index = 1
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     

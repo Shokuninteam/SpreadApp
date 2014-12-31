@@ -1,18 +1,10 @@
-//
-//  NotesController.swift
-//  SpreadApp
-//
-//  Created by Mohamed Mokhtari on 26/12/2014.
-//  Copyright (c) 2014 Shokunin. All rights reserved.
-//
-
 import UIKit
 
-class NotesController: UIViewController {
+class NotesController: UIPageTargetViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        super.index = 2
     }
     
     override func didReceiveMemoryWarning() {

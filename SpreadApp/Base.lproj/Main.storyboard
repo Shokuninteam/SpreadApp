@@ -79,7 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gIU-am-OCV"/>
                     <connections>
-                        <segue destination="yau-pj-FcF" kind="push" identifier="DirectLoginSegue" id="mfD-iP-1T5"/>
+                        <segue destination="Bh1-Kg-Dd7" kind="push" identifier="DirectLoginSegue" id="jQQ-cR-PM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1j-Zh-cEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,7 +151,7 @@
                         <outlet property="male" destination="tWs-mB-Q92" id="0Jw-ZF-gyW"/>
                         <outlet property="nickname" destination="mix-Fs-Tto" id="4q0-Og-2Rp"/>
                         <outlet property="pwd" destination="GRN-yd-NNd" id="6wj-Kb-J3z"/>
-                        <segue destination="yau-pj-FcF" kind="push" identifier="SignUpSegue" id="x52-6O-HlA"/>
+                        <segue destination="Bh1-Kg-Dd7" kind="push" identifier="SignUpSegue" id="IQ5-dX-reY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhS-md-wWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -203,7 +203,7 @@
                     <connections>
                         <outlet property="pwd" destination="KkU-f8-SeJ" id="NEV-Jl-Id1"/>
                         <outlet property="userName" destination="OI4-5Q-Zy9" id="41B-Wp-CVy"/>
-                        <segue destination="yau-pj-FcF" kind="push" identifier="SignInSegue" id="qTC-yC-yPH"/>
+                        <segue destination="Bh1-Kg-Dd7" kind="push" identifier="SignInSegue" id="V2g-WG-68X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -213,7 +213,7 @@
         <!--Profil Controller-->
         <scene sceneID="Gg3-pN-JUg">
             <objects>
-                <viewController id="j8B-Er-kau" customClass="ProfilController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profil" id="j8B-Er-kau" customClass="ProfilController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TOR-25-4tK"/>
                         <viewControllerLayoutGuide type="bottom" id="JOt-w2-RXw"/>
@@ -234,12 +234,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPE-AY-EsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-296" y="752"/>
+            <point key="canvasLocation" x="-312" y="1472"/>
         </scene>
         <!--Feed-->
         <scene sceneID="i7L-8H-e6I">
             <objects>
-                <viewController id="yau-pj-FcF" customClass="NewsFeedController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="feed" id="yau-pj-FcF" customClass="NewsFeedController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o6n-zh-3a1"/>
                         <viewControllerLayoutGuide type="bottom" id="8iA-z5-aQz"/>
@@ -266,12 +266,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALb-U6-igd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="FPI-dL-tpO"/>
             </objects>
-            <point key="canvasLocation" x="141" y="742"/>
+            <point key="canvasLocation" x="141" y="1472"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="V6b-sz-a0B">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Bh1-Kg-Dd7" customClass="PageViewController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NXC-EB-4u4"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgA-VP-rtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="754"/>
         </scene>
         <!--Notes Controller-->
         <scene sceneID="tVX-DT-Mdy">
             <objects>
-                <viewController id="rOJ-8z-2ei" customClass="NotesController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="notes" id="rOJ-8z-2ei" customClass="NotesController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EEF-3G-Iu8"/>
                         <viewControllerLayoutGuide type="bottom" id="oG1-HI-VfW"/>
@@ -297,7 +307,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wab-ty-6to" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="h2s-gL-7ys"/>
             </objects>
-            <point key="canvasLocation" x="548" y="752"/>
+            <point key="canvasLocation" x="598" y="1472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ceh-TZ-QS8">
@@ -329,6 +339,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="x52-6O-HlA"/>
+        <segue reference="V2g-WG-68X"/>
     </inferredMetricsTieBreakers>
 </document>
