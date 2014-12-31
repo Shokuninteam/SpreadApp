@@ -98,15 +98,15 @@ class RegisterController: UIViewController, RegisterRequestDelegate, CLLocationM
     
     func maleClick (){
         self.currentGender = "male"
-        male.textColor = UIColor.blueColor()
-        female.textColor = UIColor.blackColor()
+        male.textColor = UIColor(red: 0, green: 140.0/255, blue: 121.0/255, alpha: 1)
+        female.textColor = UIColor.lightGrayColor()
 
     }
 
     func femaleClick (){
         self.currentGender = "female"
-        female.textColor = UIColor.blueColor()
-        male.textColor = UIColor.blackColor()
+        female.textColor = UIColor(red: 0, green: 140.0/255, blue: 121.0/255, alpha: 1)
+        male.textColor = UIColor.lightGrayColor()
     }
     
     func formCheck () -> Bool{
@@ -125,7 +125,7 @@ class RegisterController: UIViewController, RegisterRequestDelegate, CLLocationM
             msg = "Missing pwd"
             error = true
         }
-        else if (countElements(email.text) < 6){
+        else if (countElements(pwd.text) < 6){
             msg = "Your password should contain at least 6 caracters"
             error = true
         }
