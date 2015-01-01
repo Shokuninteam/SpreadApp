@@ -16,6 +16,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
 
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         var controller : UIPageTargetViewController = viewController as UIPageTargetViewController

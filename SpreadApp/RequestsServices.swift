@@ -10,6 +10,7 @@ class RequestsServices: NSObject {
     
     var loginControllerDelegate : LoginController?
     var registerControllerDelegate : RegisterController?
+    var createNoteControllerDelegate : CreateNoteController?
     
     func loginNickname (nickname : String, pwd :String) {
         
@@ -116,6 +117,37 @@ class RequestsServices: NSObject {
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.registerControllerDelegate!.registerRequestHandler(code, id : id)
+            })
+        })
+        task.resume()
+    }
+    
+    func createNote (content : String, tags : String, user :String, long : Double, lat : Double) {
+        
+        var request = NSMutableURLRequest(URL : UrlsProvider.createNote())
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "POST"
+        
+        var params = ["content":"\(content)", "tags":"\(tags)", "user":"\(user)", "long":"\(long)", "lat":"\(lat)"] as Dictionary
+        
+        var err: NSError?
+        
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var id = ""
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.createNoteControllerDelegate!.createNoteRequestHandler(code)
             })
         })
         task.resume()
