@@ -13,4 +13,8 @@ class Pos: NSObject {
     var date : NSDate?
     var loc : Loc?
     
+    init(json : NSDictionary){
+        self.date = json["date"] as? NSDate
+        self.loc = Loc(json: json["loc"] as NSDictionary!)
+    }
 }

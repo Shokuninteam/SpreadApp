@@ -14,4 +14,8 @@ class Note: NSObject {
     var content : String?
     var tags : [String]?
     var spread : [Spread]?
+    
+    init(json : NSDictionary){
+        
+    }
 }

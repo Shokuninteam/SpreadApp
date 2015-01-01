@@ -2,15 +2,10 @@ import UIKit
 
 class RequestsServices: NSObject {
     
-    //var err: NSError?
-    //var json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as NSDictionary
-    //if(err != nil) {
-    //    println(err!.localizedDescription)
-    //}
-    
     var loginControllerDelegate : LoginController?
     var registerControllerDelegate : RegisterController?
     var createNoteControllerDelegate : CreateNoteController?
+    var profileControllerDelegate : ProfilController?
     
     func loginNickname (nickname : String, pwd :String) {
         
@@ -94,7 +89,6 @@ class RequestsServices: NSObject {
             img = UIImage(named: "avatar-female")
         }
         var avatar : NSData = UIImagePNGRepresentation(img)
-        
         var params = ["nickname":"\(nickname)", "pwd":"\(pwd)", "mail":"\(mail)", "long":"\(long)", "lat":"\(lat)", "avatar":"\(avatar)"] as Dictionary
         
         var err: NSError?
@@ -152,6 +146,40 @@ class RequestsServices: NSObject {
         })
         task.resume()
     }
-    
+
+    func getUserProfil (id : String) {
+        
+        var request = NSMutableURLRequest(URL : UrlsProvider.getUserById(id))
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var json : NSDictionary?
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            if code == 200 || code == 304{
+                var err: NSError?
+                json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as? NSDictionary
+                if(err != nil) {
+                    println(err!.localizedDescription)
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                var user = User(json : json!)
+                self.profileControllerDelegate?.profilUserRequestHandler(user)
+            })
+        })
+        task.resume()
+    }
+
     
 }

@@ -13,4 +13,8 @@ class Spread: NSObject {
     var date : NSDate?
     var loc : Loc?
     var answer : String?
+    
+    init(json : NSDictionary){
+        
+    }
 }
