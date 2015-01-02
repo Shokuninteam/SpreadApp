@@ -17,7 +17,10 @@ class User: NSObject {
         self.nickname = json["nickname"] as? String
         self.pwd = json["pwd"] as? String
         self.mail = json["mail"] as? String
-        self.avatar = NSJSONSerialization.dataWithJSONObject(json["avatar"]!, options: .allZeros, error: nil)
+        
+        var avatarString = json["avatar"] as? String
+        self.avatar = NSData(base64EncodedString: avatarString!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+        
         self.active = json["active"] as? Bool
         self.favs = json["favs"]  as? [String]
             

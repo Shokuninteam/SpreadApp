@@ -112,6 +112,7 @@ class RegisterController: UIViewController, RegisterRequestDelegate, CLLocationM
     func formCheck () -> Bool{
         var msg = ""
         var error = false
+        var location = locationManager.location
         
         if (nickname.text == ""){
             msg = "Missing nickname"
@@ -132,7 +133,8 @@ class RegisterController: UIViewController, RegisterRequestDelegate, CLLocationM
         else if (currentGender == "none"){
             msg = "Missing Gender"
             error = true
-        } else if (location == false){
+        }
+        else if (self.location == false || location == nil){
             msg = "Spread is location based, you can't use this App without localisation"
             error = true
         }
@@ -149,7 +151,13 @@ class RegisterController: UIViewController, RegisterRequestDelegate, CLLocationM
     @IBAction func register(sender: UIButton) {
         if (formCheck()){
             background()
-            requestsServices.register(nickname.text, mail: email.text, pwd: pwd.text, gender: currentGender, long: locationManager.location.coordinate.longitude, lat: locationManager.location.coordinate.latitude)
+            var location = locationManager.location
+            if location != nil {
+                var lat = locationManager.location.coordinate.latitude
+                var long = locationManager.location.coordinate.longitude
+                
+                requestsServices.register(nickname.text, mail: email.text, pwd: pwd.text, gender: currentGender, long: long, lat: lat)
+            }
         }
     }
     

@@ -89,7 +89,9 @@ class RequestsServices: NSObject {
             img = UIImage(named: "avatar-female")
         }
         var avatar : NSData = UIImagePNGRepresentation(img)
-        var params = ["nickname":"\(nickname)", "pwd":"\(pwd)", "mail":"\(mail)", "long":"\(long)", "lat":"\(lat)", "avatar":"\(avatar)"] as Dictionary
+        var avatarString = avatar.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+        
+        var params = ["nickname":"\(nickname)", "pwd":"\(pwd)", "mail":"\(mail)", "long":"\(long)", "lat":"\(lat)", "avatar":"\(avatarString)"] as Dictionary
         
         var err: NSError?
         
@@ -180,6 +182,42 @@ class RequestsServices: NSObject {
         })
         task.resume()
     }
-
+    
+    func getUserHistory (id : String) {
+        
+        var request = NSMutableURLRequest(URL : UrlsProvider.getHistory(id))
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var json : NSArray?
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            if code == 200 || code == 304{
+                var err: NSError?
+                json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as? NSArray
+                if(err != nil) {
+                    println(err!.localizedDescription)
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                var notesArray = [Note]()
+                for noteJson in json! {
+                    notesArray.append(Note(json: noteJson as NSDictionary))
+                }
+                self.profileControllerDelegate?.profilHistoryRequestHandler(notesArray)
+            })
+        })
+        task.resume()
+    }
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44030AC11A561F4E00AF26C5 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44030AC01A561F4E00AF26C5 /* NoteCell.swift */; };
 		443DCF161A4E234200B0EF39 /* RequestsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF151A4E234100B0EF39 /* RequestsServices.swift */; };
 		443DCF191A4E308900B0EF39 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF181A4E308900B0EF39 /* StartPageViewController.swift */; };
 		443DCF1B1A4E377A00B0EF39 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF1A1A4E377A00B0EF39 /* RegisterController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44030AC01A561F4E00AF26C5 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		443DCF151A4E234100B0EF39 /* RequestsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsServices.swift; sourceTree = "<group>"; };
 		443DCF181A4E308900B0EF39 /* StartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		443DCF1A1A4E377A00B0EF39 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44030AC21A561F5300AF26C5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				44030AC01A561F4E00AF26C5 /* NoteCell.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		443DCF171A4E234E00B0EF39 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +186,9 @@
 				443DCF231A4E39F100B0EF39 /* Model */,
 				443DCF171A4E234E00B0EF39 /* Services */,
 				443DCF1E1A4E395700B0EF39 /* Tools */,
-				D9B2353B1A4DCCF6001A2473 /* Images.xcassets */,
+				44030AC21A561F5300AF26C5 /* UI */,
 				D9B235381A4DCCF6001A2473 /* Main.storyboard */,
+				D9B2353B1A4DCCF6001A2473 /* Images.xcassets */,
 				D9B2353D1A4DCCF6001A2473 /* LaunchScreen.xib */,
 				D9B235321A4DCCF6001A2473 /* Supporting Files */,
 			);
@@ -328,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44030AC11A561F4E00AF26C5 /* NoteCell.swift in Sources */,
 				448E89201A5391AD00F8F49A /* UIPageTargetViewController.swift in Sources */,
 				443DCF271A4E3B4800B0EF39 /* Pos.swift in Sources */,
 				443DCF1B1A4E377A00B0EF39 /* RegisterController.swift in Sources */,

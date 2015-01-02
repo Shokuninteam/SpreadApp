@@ -1,11 +1,3 @@
-//
-//  Note.swift
-//  SpreadApp
-//
-//  Created by Frank Bassard on 27/12/2014.
-//  Copyright (c) 2014 Shokunin. All rights reserved.
-//
-
 import UIKit
 
 class Note: NSObject {
@@ -16,6 +8,19 @@ class Note: NSObject {
     var spread : [Spread]?
     
     init(json : NSDictionary){
+        self.user = json["user"] as? String
+        self.date = json["date"] as? NSDate
+        self.content = json["content"] as? String
+        self.tags = json["tags"] as? [String]
         
+        var spreadArray = json["spread"] as? [NSDictionary]
+        for tempSpread in spreadArray! {
+            if self.spread == nil {
+                self.spread = [Spread(json : tempSpread as NSDictionary)]
+            }
+            else {
+                self.spread?.append(Spread(json : tempSpread as NSDictionary))
+            }
+        }
     }
 }

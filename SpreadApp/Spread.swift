@@ -15,6 +15,9 @@ class Spread: NSObject {
     var answer : String?
     
     init(json : NSDictionary){
-        
+        self.user = json["user"] as? String
+        self.date = json["date"] as? NSDate
+        self.answer = json["answer"] as? String
+        self.loc = Loc(json: json["loc"] as NSDictionary)
     }
 }
