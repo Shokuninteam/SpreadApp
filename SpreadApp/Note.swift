@@ -9,7 +9,11 @@ class Note: NSObject {
     
     init(json : NSDictionary){
         self.user = json["user"] as? String
-        self.date = json["date"] as? NSDate
+        
+        var date = json["date"] as? String
+        self.date =  NSDate(dateString: date!.substringToIndex(advance(date!.startIndex, 10)))
+
+        
         self.content = json["content"] as? String
         self.tags = json["tags"] as? [String]
         

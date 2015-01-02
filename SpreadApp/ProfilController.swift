@@ -29,8 +29,8 @@ class ProfilController: UIPageTargetViewController, ProfilRequestDelegate, UITab
     func profilUserRequestHandler(user : User){
         self.user = user
         nickName.text = user.nickname
-        var img = UIImage(data: user.avatar!)
-        avatar.image = img
+        //var img = UIImage(data: user.avatar!)
+        //avatar.image = img
     }
     
     func profilHistoryRequestHandler(notes: [Note]){
@@ -51,6 +51,10 @@ class ProfilController: UIPageTargetViewController, ProfilRequestDelegate, UITab
         var note = self.notes![indexPath.item]
         cell.content.text = note.content
         cell.count.text = "\(countElements(note.spread!))"
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        cell.date.text = dateFormatter.stringFromDate(note.date!)
+        
         var tags = ""
         for tag in note.tags! {
             tags += " #\(tag)"

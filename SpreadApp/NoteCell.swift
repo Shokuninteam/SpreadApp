@@ -8,6 +8,9 @@ class NoteCell: UITableViewCell {
     
     @IBOutlet var tags: UILabel!
     
+    @IBOutlet var date: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

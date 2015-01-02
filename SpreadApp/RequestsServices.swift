@@ -6,6 +6,7 @@ class RequestsServices: NSObject {
     var registerControllerDelegate : RegisterController?
     var createNoteControllerDelegate : CreateNoteController?
     var profileControllerDelegate : ProfilController?
+    var notesControllerDelegate : NotesController?
     
     func loginNickname (nickname : String, pwd :String) {
         
@@ -215,6 +216,80 @@ class RequestsServices: NSObject {
                     notesArray.append(Note(json: noteJson as NSDictionary))
                 }
                 self.profileControllerDelegate?.profilHistoryRequestHandler(notesArray)
+            })
+        })
+        task.resume()
+    }
+    
+    func getfavs (id : String) {
+        
+        var request = NSMutableURLRequest(URL : UrlsProvider.getFavs(id))
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var json : NSArray?
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            if code == 200 || code == 304{
+                var err: NSError?
+                json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as? NSArray
+                if(err != nil) {
+                    println(err!.localizedDescription)
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                var notesArray = [Note]()
+                for noteJson in json! {
+                    notesArray.append(Note(json: noteJson as NSDictionary))
+                }
+                self.notesControllerDelegate?.notesFavsRequestHandler(notesArray)
+            })
+        })
+        task.resume()
+    }
+    
+    func getSpreaded (id : String) {
+        
+        var request = NSMutableURLRequest(URL : UrlsProvider.getSpreaded(id))
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var json : NSArray?
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            if code == 200 || code == 304{
+                var err: NSError?
+                json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as? NSArray
+                if(err != nil) {
+                    println(err!.localizedDescription)
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                var notesArray = [Note]()
+                for noteJson in json! {
+                    notesArray.append(Note(json: noteJson as NSDictionary))
+                }
+                self.notesControllerDelegate?.notesSpreadedRequestHandler(notesArray)
             })
         })
         task.resume()

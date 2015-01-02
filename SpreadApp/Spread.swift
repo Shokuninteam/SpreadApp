@@ -1,11 +1,3 @@
-//
-//  Spread.swift
-//  SpreadApp
-//
-//  Created by Frank Bassard on 27/12/2014.
-//  Copyright (c) 2014 Shokunin. All rights reserved.
-//
-
 import UIKit
 
 class Spread: NSObject {
@@ -16,7 +8,10 @@ class Spread: NSObject {
     
     init(json : NSDictionary){
         self.user = json["user"] as? String
-        self.date = json["date"] as? NSDate
+        
+        var date = json["date"] as? String
+        self.date =  NSDate(dateString: date!.substringToIndex(advance(date!.startIndex, 10)))
+
         self.answer = json["answer"] as? String
         self.loc = Loc(json: json["loc"] as NSDictionary)
     }
