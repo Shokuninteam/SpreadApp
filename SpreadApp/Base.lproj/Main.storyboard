@@ -286,6 +286,7 @@
                         <outlet property="avatar" destination="XmT-Zm-jUr" id="l8n-hq-kBE"/>
                         <outlet property="nickName" destination="cWP-wq-Ecl" id="Zsx-Wa-jmk"/>
                         <outlet property="profileTableView" destination="4BW-xi-Sl4" id="Zhx-eK-Ykw"/>
+                        <segue destination="jRr-7U-Wbi" kind="push" identifier="MapFromProfilSegue" id="Ipk-tM-TDv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPE-AY-EsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,6 +333,25 @@
                 <swipeGestureRecognizer direction="right" id="FPI-dL-tpO"/>
             </objects>
             <point key="canvasLocation" x="141" y="1472"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="i04-mG-Eqh">
+            <objects>
+                <viewController id="jRr-7U-Wbi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p2d-eN-E4w"/>
+                        <viewControllerLayoutGuide type="bottom" id="GxJ-2Y-lk4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UWK-ab-CrD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3hG-7g-GYr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7X-r6-oNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="2796"/>
         </scene>
         <!--Create Note Controller-->
         <scene sceneID="i0L-7z-LHD">
@@ -392,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnO-9Z-XuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="2202"/>
+            <point key="canvasLocation" x="141" y="2148"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="V6b-sz-a0B">
@@ -500,6 +520,7 @@
                     </view>
                     <connections>
                         <outlet property="notesTableView" destination="Z0Q-gT-PTE" id="wJ9-8c-B9L"/>
+                        <segue destination="jRr-7U-Wbi" kind="push" identifier="MapFromNotesSegue" id="AUL-c8-ueG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wab-ty-6to" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,5 +560,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="V2g-WG-68X"/>
+        <segue reference="Ipk-tM-TDv"/>
     </inferredMetricsTieBreakers>
 </document>

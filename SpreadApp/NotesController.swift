@@ -28,17 +28,14 @@ class NotesController: UIPageTargetViewController, NotesRequestDelegate, UITable
 
     func notesTopRequestHandler(topNotes : [Note]){
         self.topNotes = topNotes
-        println("top loaded")
     }
     
     func notesFavsRequestHandler(favNotes : [Note]){
         self.favNotes = favNotes
-        println("fav loaded")
     }
     
     func notesSpreadedRequestHandler(spreadedNotes : [Note]){
         self.spreadedNotes = spreadedNotes
-        println("spreaded loaded")
     }
     
     @IBAction func clickSpreaded(sender: AnyObject) {
@@ -59,21 +56,18 @@ class NotesController: UIPageTargetViewController, NotesRequestDelegate, UITable
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if self.current == "top" {
             if topNotes == nil {
-                println("0 top notes")
                 return 0
             } else {
                 return countElements(topNotes!)
             }
         } else if self.current == "favs"{
             if favNotes == nil {
-                println("0 fav notes")
                 return 0
             } else {
                 return countElements(favNotes!)
             }
         } else {
             if spreadedNotes == nil {
-                println("0 spreaded notes")                
                 return 0
             } else {
                 return countElements(spreadedNotes!)
