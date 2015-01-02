@@ -28,20 +28,14 @@
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="LogInSegue" id="bXs-FK-adM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="By continuing, you agree to our terms and Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg7-s1-8Oi">
-                                <rect key="frame" x="41" y="527" width="239" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Spread your valuable ideas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDS-AC-k5J">
-                                <rect key="frame" x="56" y="259" width="208" height="21"/>
+                                <rect key="frame" x="56" y="259" width="209" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="to the human beings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPe-sS-ZJ2">
-                                <rect key="frame" x="81" y="288" width="158" height="21"/>
+                                <rect key="frame" x="81" y="288" width="159" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -60,21 +54,29 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="spread" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-rx-J3b">
                                 <rect key="frame" x="95" y="91" width="130" height="130"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qL6-J4-ree">
+                                <rect key="frame" x="31" y="518" width="259" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <state key="normal" title="By continuing, you agree to our terms and Privacy Policy">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fNr-cm-mw2" kind="push" id="KLy-ds-Rqu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="maO-wm-1UC" firstAttribute="top" secondItem="iPe-sS-ZJ2" secondAttribute="bottom" constant="65" id="4VB-Sh-pft"/>
                             <constraint firstItem="gPw-Xk-A8r" firstAttribute="top" secondItem="maO-wm-1UC" secondAttribute="bottom" constant="26" id="8aJ-zj-Gps"/>
-                            <constraint firstItem="Wg7-s1-8Oi" firstAttribute="top" secondItem="gPw-Xk-A8r" secondAttribute="bottom" constant="53" id="O7D-rv-Jb5"/>
                             <constraint firstItem="maO-wm-1UC" firstAttribute="centerX" secondItem="iPe-sS-ZJ2" secondAttribute="centerX" id="R68-1D-ASS"/>
                             <constraint firstItem="maO-wm-1UC" firstAttribute="centerX" secondItem="gPw-Xk-A8r" secondAttribute="centerX" id="aWg-cw-tR3"/>
                             <constraint firstItem="RjK-rx-J3b" firstAttribute="top" secondItem="gn2-IO-8NY" secondAttribute="bottom" constant="27" id="cAA-xC-yBP"/>
                             <constraint firstItem="VDS-AC-k5J" firstAttribute="top" secondItem="RjK-rx-J3b" secondAttribute="bottom" constant="38" id="dIn-7F-pzo"/>
                             <constraint firstItem="iPe-sS-ZJ2" firstAttribute="top" secondItem="VDS-AC-k5J" secondAttribute="bottom" constant="8" id="daP-I6-5Wc"/>
                             <constraint firstItem="maO-wm-1UC" firstAttribute="centerX" secondItem="VDS-AC-k5J" secondAttribute="centerX" id="j2g-DL-mob"/>
-                            <constraint firstItem="maO-wm-1UC" firstAttribute="centerX" secondItem="Wg7-s1-8Oi" secondAttribute="centerX" id="jpb-61-IZ9"/>
                             <constraint firstItem="maO-wm-1UC" firstAttribute="centerX" secondItem="RjK-rx-J3b" secondAttribute="centerX" id="xJA-3K-7g3"/>
-                            <constraint firstItem="a0z-nQ-QFW" firstAttribute="top" secondItem="Wg7-s1-8Oi" secondAttribute="bottom" constant="20" id="xPN-uL-yQb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gIU-am-OCV"/>
@@ -85,6 +87,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1j-Zh-cEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141" y="-704"/>
+        </scene>
+        <!--Terms Controller-->
+        <scene sceneID="KDh-6m-ywY">
+            <objects>
+                <viewController id="fNr-cm-mw2" customClass="TermsController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kGM-XV-CbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="bOD-K9-UTl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cMU-nA-khi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TQJ-sZ-Nqr">
+                                <rect key="frame" x="16" y="72" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Terms"/>
+                                    <segment title="Privacy policy"/>
+                                </segments>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bmm-oD-WSO">
+                                <rect key="frame" x="16" y="108" width="288" height="452"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gAo-Bg-Sup"/>
+                    <connections>
+                        <outlet property="controlSegment" destination="TQJ-sZ-Nqr" id="sbs-3x-9XS"/>
+                        <outlet property="text" destination="Bmm-oD-WSO" id="zXd-rc-W7h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dN-uB-97S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="-704"/>
         </scene>
         <!--Register-->
         <scene sceneID="qRD-sd-zo9">
@@ -156,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhS-md-wWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-466" y="12"/>
+            <point key="canvasLocation" x="-148" y="12"/>
         </scene>
         <!--Log in-->
         <scene sceneID="ufC-wZ-h7g">
@@ -208,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="12"/>
+            <point key="canvasLocation" x="417" y="12"/>
         </scene>
         <!--Profil Controller-->
         <scene sceneID="Gg3-pN-JUg">
@@ -422,7 +462,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgA-VP-rtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="754"/>
+            <point key="canvasLocation" x="141" y="728"/>
         </scene>
         <!--Notes Controller-->
         <scene sceneID="tVX-DT-Mdy">
@@ -559,7 +599,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="V2g-WG-68X"/>
+        <segue reference="jQQ-cR-PM1"/>
         <segue reference="Ipk-tM-TDv"/>
     </inferredMetricsTieBreakers>
 </document>

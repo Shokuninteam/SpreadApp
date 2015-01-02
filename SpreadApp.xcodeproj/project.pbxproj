@@ -11,6 +11,7 @@
 		44030AC41A56463400AF26C5 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44030AC31A56463400AF26C5 /* NSDateExtension.swift */; };
 		44030AC61A564EFE00AF26C5 /* NotesRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44030AC51A564EFE00AF26C5 /* NotesRequestDelegate.swift */; };
 		4436FB851A567E6500236635 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436FB841A567E6500236635 /* MapController.swift */; };
+		4436FB871A567F7100236635 /* TermsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436FB861A567F7100236635 /* TermsController.swift */; };
 		443DCF161A4E234200B0EF39 /* RequestsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF151A4E234100B0EF39 /* RequestsServices.swift */; };
 		443DCF191A4E308900B0EF39 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF181A4E308900B0EF39 /* StartPageViewController.swift */; };
 		443DCF1B1A4E377A00B0EF39 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF1A1A4E377A00B0EF39 /* RegisterController.swift */; };
@@ -55,6 +56,7 @@
 		44030AC31A56463400AF26C5 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		44030AC51A564EFE00AF26C5 /* NotesRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesRequestDelegate.swift; sourceTree = "<group>"; };
 		4436FB841A567E6500236635 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		4436FB861A567F7100236635 /* TermsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsController.swift; sourceTree = "<group>"; };
 		443DCF151A4E234100B0EF39 /* RequestsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsServices.swift; sourceTree = "<group>"; };
 		443DCF181A4E308900B0EF39 /* StartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		443DCF1A1A4E377A00B0EF39 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				D9B235611A4DE576001A2473 /* CreateNoteController.swift */,
 				D9B235631A4DE64D001A2473 /* NewsFeedController.swift */,
 				4436FB841A567E6500236635 /* MapController.swift */,
+				4436FB861A567F7100236635 /* TermsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				4436FB851A567E6500236635 /* MapController.swift in Sources */,
 				443DCF221A4E39EB00B0EF39 /* Note.swift in Sources */,
 				443DCF191A4E308900B0EF39 /* StartPageViewController.swift in Sources */,
+				4436FB871A567F7100236635 /* TermsController.swift in Sources */,
 				443DCF1D1A4E395100B0EF39 /* UrlsProvider.swift in Sources */,
 				D9B2355C1A4DE517001A2473 /* SettingController.swift in Sources */,
 				443DCF201A4E39E300B0EF39 /* User.swift in Sources */,
