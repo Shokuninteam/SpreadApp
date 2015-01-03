@@ -7,6 +7,7 @@ class RequestsServices: NSObject {
     var createNoteControllerDelegate : CreateNoteController?
     var profileControllerDelegate : ProfilController?
     var notesControllerDelegate : NotesController?
+    var newsFeedControllerDelegate : NewsFeedController?
     
     func loginNickname (nickname : String, pwd :String) {
         
@@ -249,10 +250,12 @@ class RequestsServices: NSObject {
             
             dispatch_async(dispatch_get_main_queue(), {
                 var notesArray = [Note]()
-                for noteJson in json! {
-                    notesArray.append(Note(json: noteJson as NSDictionary))
+                if json != nil{
+                    for noteJson in json! {
+                        notesArray.append(Note(json: noteJson as NSDictionary))
+                    }
+                    self.notesControllerDelegate?.notesFavsRequestHandler(notesArray)
                 }
-                self.notesControllerDelegate?.notesFavsRequestHandler(notesArray)
             })
         })
         task.resume()
@@ -290,6 +293,77 @@ class RequestsServices: NSObject {
                     notesArray.append(Note(json: noteJson as NSDictionary))
                 }
                 self.notesControllerDelegate?.notesSpreadedRequestHandler(notesArray)
+            })
+        })
+        task.resume()
+    }
+    
+    func getUnansweredNotes (id : String) {
+        
+        var request = NSMutableURLRequest(URL : UrlsProvider.getUnanswered(id))
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var json : NSArray?
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            if code == 200 || code == 304{
+                var err: NSError?
+                json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as? NSArray
+                if(err != nil) {
+                    println(err!.localizedDescription)
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                var notesArray = [Note]()
+                for noteJson in json! {
+                    notesArray.append(Note(json: noteJson as NSDictionary))
+                }
+                self.newsFeedControllerDelegate?.feedUnansweredNotesRequestHandler(notesArray)
+            })
+        })
+        task.resume()
+    }
+    
+    func getNoteUser (id : String) {
+        
+        var request = NSMutableURLRequest(URL : UrlsProvider.getUserById(id))
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var json : NSDictionary?
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            if code == 200 || code == 304{
+                var err: NSError?
+                json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: &err) as? NSDictionary
+                if(err != nil) {
+                    println(err!.localizedDescription)
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                var user = User(json: json!)
+                self.newsFeedControllerDelegate?.feedNoteUserRquestHandler(user)
             })
         })
         task.resume()

@@ -5,8 +5,8 @@ class StartPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var returnValue: NSString? = NSUserDefaults.standardUserDefaults().objectForKey("userId") as? NSString
-        if returnValue != nil {
+        var id: NSString? = NSUserDefaults.standardUserDefaults().objectForKey("userId") as? NSString
+        if id != nil {
             performSegueWithIdentifier("DirectLoginSegue", sender: self)
         }
     }

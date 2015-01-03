@@ -12,6 +12,8 @@
 		44030AC61A564EFE00AF26C5 /* NotesRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44030AC51A564EFE00AF26C5 /* NotesRequestDelegate.swift */; };
 		4436FB851A567E6500236635 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436FB841A567E6500236635 /* MapController.swift */; };
 		4436FB871A567F7100236635 /* TermsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436FB861A567F7100236635 /* TermsController.swift */; };
+		4436FB8B1A57879000236635 /* FeedRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436FB8A1A57879000236635 /* FeedRequestDelegate.swift */; };
+		4436FB8D1A57A21500236635 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4436FB8C1A57A21500236635 /* MapKit.framework */; };
 		443DCF161A4E234200B0EF39 /* RequestsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF151A4E234100B0EF39 /* RequestsServices.swift */; };
 		443DCF191A4E308900B0EF39 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF181A4E308900B0EF39 /* StartPageViewController.swift */; };
 		443DCF1B1A4E377A00B0EF39 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DCF1A1A4E377A00B0EF39 /* RegisterController.swift */; };
@@ -57,6 +59,8 @@
 		44030AC51A564EFE00AF26C5 /* NotesRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesRequestDelegate.swift; sourceTree = "<group>"; };
 		4436FB841A567E6500236635 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		4436FB861A567F7100236635 /* TermsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsController.swift; sourceTree = "<group>"; };
+		4436FB8A1A57879000236635 /* FeedRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedRequestDelegate.swift; sourceTree = "<group>"; };
+		4436FB8C1A57A21500236635 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		443DCF151A4E234100B0EF39 /* RequestsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsServices.swift; sourceTree = "<group>"; };
 		443DCF181A4E308900B0EF39 /* StartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		443DCF1A1A4E377A00B0EF39 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4436FB8D1A57A21500236635 /* MapKit.framework in Frameworks */,
 				44B6F3051A53683C0042AC3D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +161,7 @@
 				44D0873C1A54D00200EDCE98 /* CreateNoteRequestDelegate.swift */,
 				44E448501A54DEB9002D2CC9 /* ProfilRequestDelegate.swift */,
 				44030AC51A564EFE00AF26C5 /* NotesRequestDelegate.swift */,
+				4436FB8A1A57879000236635 /* FeedRequestDelegate.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 		D9B235261A4DCCF6001A2473 = {
 			isa = PBXGroup;
 			children = (
+				4436FB8C1A57A21500236635 /* MapKit.framework */,
 				44B6F3041A53683C0042AC3D /* CoreLocation.framework */,
 				D9B235311A4DCCF6001A2473 /* SpreadApp */,
 				D9B235471A4DCCF7001A2473 /* SpreadAppTests */,
@@ -367,6 +374,7 @@
 				44030AC41A56463400AF26C5 /* NSDateExtension.swift in Sources */,
 				4436FB851A567E6500236635 /* MapController.swift in Sources */,
 				443DCF221A4E39EB00B0EF39 /* Note.swift in Sources */,
+				4436FB8B1A57879000236635 /* FeedRequestDelegate.swift in Sources */,
 				443DCF191A4E308900B0EF39 /* StartPageViewController.swift in Sources */,
 				4436FB871A567F7100236635 /* TermsController.swift in Sources */,
 				443DCF1D1A4E395100B0EF39 /* UrlsProvider.swift in Sources */,

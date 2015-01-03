@@ -1,7 +1,10 @@
 import UIKit
+import MapKit
 
-class MapController: UIViewController {
+class MapController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet var map: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
