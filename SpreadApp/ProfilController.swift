@@ -7,6 +7,7 @@ class ProfilController: UIPageTargetViewController, ProfilRequestDelegate, UITab
     @IBOutlet var nickName: UILabel!
     @IBOutlet var profileTableView: UITableView!
     var notes : [Note]?
+    var targetedNote : Note?
     
     let requestsServices = RequestsServices()
     var user : User?
@@ -62,6 +63,18 @@ class ProfilController: UIPageTargetViewController, ProfilRequestDelegate, UITab
         cell.tags.text = tags
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        self.targetedNote = self.notes![indexPath.row]
+        performSegueWithIdentifier("MapFromProfilSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "MapFromProfilSegue"{
+            var target = segue.destinationViewController as MapController
+            target.note = self.targetedNote
+        }
     }
     
     

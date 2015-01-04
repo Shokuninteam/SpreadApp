@@ -6,6 +6,7 @@ class NotesController: UIPageTargetViewController, NotesRequestDelegate, UITable
     var topNotes : [Note]?
     var favNotes : [Note]?
     var spreadedNotes : [Note]?
+    var targetedNote : Note?
     
     var current = "top"
     
@@ -101,6 +102,24 @@ class NotesController: UIPageTargetViewController, NotesRequestDelegate, UITable
 
         return cell
 
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        if current == "top" {
+            self.targetedNote = topNotes![indexPath.row]
+        } else if current == "favs" {
+            self.targetedNote = favNotes![indexPath.row]
+        } else {
+            self.targetedNote = spreadedNotes![indexPath.row]
+        }
+        performSegueWithIdentifier("MapFromNotesSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "MapFromNotesSegue"{
+            var target = segue.destinationViewController as MapController
+            target.note = self.targetedNote
+        }
     }
 
 }

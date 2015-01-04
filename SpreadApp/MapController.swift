@@ -25,10 +25,13 @@ class MapController: UIViewController, MKMapViewDelegate {
         var latMax = 0.0
         var longMax = 0.0
         for spread in note.spread! {
-            var lat : Double = spread.loc!.coordinates![0]
+            var lat : Double = spread.loc!.coordinates![1]
             var long = spread.loc!.coordinates![0]
             let location = CLLocationCoordinate2D(latitude: lat,longitude: long)
             locations.append(location)
+            let annotation = MKPointAnnotation()
+            annotation.setCoordinate(location)
+            map.addAnnotation(annotation)
             if lat < latMin{
                 latMin = lat
             }
