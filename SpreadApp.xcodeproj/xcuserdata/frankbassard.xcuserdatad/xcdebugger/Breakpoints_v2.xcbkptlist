@@ -248,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpreadApp/Note.swift"
-            timestampString = "441862112.294723"
+            timestampString = "442037325.802113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "init(json:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -286,22 +286,6 @@
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpreadApp/NewsFeedController.swift"
-            timestampString = "441947576.864168"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "feedUnansweredNotesRequestHandler(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

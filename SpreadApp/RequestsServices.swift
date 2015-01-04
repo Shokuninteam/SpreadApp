@@ -369,4 +369,66 @@ class RequestsServices: NSObject {
         task.resume()
     }
     
+    func discardNote (userId : String, noteId : String, lat : Double, long : Double){
+
+        var request = NSMutableURLRequest(URL : UrlsProvider.discardNote(userId))
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "POST"
+        
+        var params = ["noteId":"\(noteId)", "lat":"\(lat)", "long":"\(long)"] as Dictionary
+        
+        var err: NSError?
+        
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var json : NSDictionary?
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.newsFeedControllerDelegate!.feedDiscardRequestHandler(code)
+            })
+        })
+        task.resume()
+    }
+
+    func spreadNote (userId : String, noteId : String, lat : Double, long : Double){
+        
+        var request = NSMutableURLRequest(URL : UrlsProvider.spreadNote(userId))
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "POST"
+        
+        var params = ["noteId":"\(noteId)", "lat":"\(lat)", "long":"\(long)"] as Dictionary
+        
+        var err: NSError?
+        
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var code = 404
+            var json : NSDictionary?
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                code = httpResponse.statusCode
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.newsFeedControllerDelegate!.feedSpreadRequestHandler(code)
+            })
+        })
+        task.resume()
+    }
+
 }

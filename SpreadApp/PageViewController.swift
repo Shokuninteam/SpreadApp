@@ -5,7 +5,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     let pagesIdentifiers = ["profil", "feed", "notes"]
     
     override func viewDidLoad() {
-        self.navigationController?.navigationBar.hidden = true
         self.dataSource = self
         self.delegate = self
         

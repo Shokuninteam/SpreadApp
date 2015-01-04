@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zA7-hM-Z5V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jRr-7U-Wbi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -322,6 +322,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZE8-7d-BOm"/>
                     <connections>
                         <outlet property="avatar" destination="XmT-Zm-jUr" id="l8n-hq-kBE"/>
                         <outlet property="nickName" destination="cWP-wq-Ecl" id="Zsx-Wa-jmk"/>
@@ -379,21 +380,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMb-QO-GPe">
-                                        <rect key="frame" x="8" y="267" width="40" height="30"/>
-                                        <state key="normal" title="Share">
+                                        <rect key="frame" x="8" y="267" width="50" height="30"/>
+                                        <state key="normal" title="Spread">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="Share:" destination="yau-pj-FcF" eventType="touchUpInside" id="gSg-7i-Cmg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-Ua-e6l">
-                                        <rect key="frame" x="234" y="267" width="47" height="30"/>
-                                        <state key="normal" title="Report">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="report:" destination="yau-pj-FcF" eventType="touchUpInside" id="xGL-IW-cCz"/>
+                                            <action selector="spread:" destination="yau-pj-FcF" eventType="touchUpInside" id="PHH-GB-TCe"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydX-2q-rdC">
@@ -424,8 +416,18 @@
                                             <action selector="favorite:" destination="yau-pj-FcF" eventType="touchUpInside" id="qe4-KO-HBO"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-Ua-e6l">
+                                        <rect key="frame" x="227" y="267" width="53" height="30"/>
+                                        <state key="normal" title="Discard">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="discard:" destination="yau-pj-FcF" eventType="touchUpInside" id="lun-Mo-esz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6Z-D1-HQ7">
                                 <rect key="frame" x="16" y="498" width="30" height="30"/>
@@ -442,11 +444,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="FPI-dL-tpO" appends="YES" id="OoS-1b-ARU"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="1hJ-BU-O1y"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="authorName" destination="7Dx-cN-fPC" id="f6h-r1-5Ox"/>
                         <outlet property="avatar" destination="kaW-l3-MGj" id="N1d-GN-jhp"/>
@@ -457,7 +458,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALb-U6-igd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="FPI-dL-tpO"/>
             </objects>
             <point key="canvasLocation" x="141" y="1472"/>
         </scene>
@@ -473,7 +473,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GjO-gc-AUH">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GjO-gc-AUH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="jRr-7U-Wbi" id="5oV-w3-IgY"/>
@@ -552,11 +552,13 @@
             </objects>
             <point key="canvasLocation" x="141" y="2148"/>
         </scene>
-        <!--Page View Controller-->
+        <!--PageView-->
         <scene sceneID="V6b-sz-a0B">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Bh1-Kg-Dd7" customClass="PageViewController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="NXC-EB-4u4"/>
+                <pageViewController transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Bh1-Kg-Dd7" customClass="PageViewController" customModule="SpreadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="PageView" id="NXC-EB-4u4"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgA-VP-rtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -656,6 +658,7 @@
                             <outletCollection property="gestureRecognizers" destination="h2s-gL-7ys" appends="YES" id="BMg-pT-8BZ"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="NzH-ah-Dcu"/>
                     <connections>
                         <outlet property="notesTableView" destination="Z0Q-gT-PTE" id="wJ9-8c-B9L"/>
                         <segue destination="jRr-7U-Wbi" kind="push" identifier="MapFromNotesSegue" id="AUL-c8-ueG"/>
@@ -664,7 +667,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wab-ty-6to" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="h2s-gL-7ys"/>
             </objects>
-            <point key="canvasLocation" x="568" y="1466"/>
+            <point key="canvasLocation" x="556" y="1472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ceh-TZ-QS8">
@@ -701,6 +704,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="jQQ-cR-PM1"/>
-        <segue reference="Ipk-tM-TDv"/>
+        <segue reference="AUL-c8-ueG"/>
     </inferredMetricsTieBreakers>
 </document>

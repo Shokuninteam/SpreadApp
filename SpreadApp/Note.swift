@@ -1,6 +1,7 @@
 import UIKit
 
 class Note: NSObject {
+    var id : String?
     var user : String?
     var date : NSDate?
     var content : String?
@@ -9,7 +10,7 @@ class Note: NSObject {
     
     init(json : NSDictionary){
         self.user = json["user"] as? String
-        
+        self.id = json["_id"] as? String
         var date = json["date"] as? String
         self.date =  NSDate(dateString: date!.substringToIndex(advance(date!.startIndex, 10)))
 

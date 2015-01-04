@@ -29,8 +29,8 @@ class ProfilController: UIPageTargetViewController, ProfilRequestDelegate, UITab
     func profilUserRequestHandler(user : User){
         self.user = user
         nickName.text = user.nickname
-        //var img = UIImage(data: user.avatar!)
-        //avatar.image = img
+        var img = UIImage(data: user.avatar!)
+        avatar.image = img
     }
     
     func profilHistoryRequestHandler(notes: [Note]){
